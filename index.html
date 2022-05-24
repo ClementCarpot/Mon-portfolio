@@ -27,6 +27,17 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Fonction pour mettre à jour mon age sur la page automatiquement -->
+  <script type="text/javascript">
+    function getAge(date) { 
+        var diff = Date.now() - date.getTime();
+        var age = new Date(diff); 
+        return Math.abs(age.getUTCFullYear() - 1970);
+    }
+    var monAge = getAge(new Date(1998, 1, 24)); //Date(année, mois, jour)   
+    getAge(date);
+</script>
+
   <!-- =======================================================
   * Template Name: iPortfolio - v3.7.0
   * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
@@ -58,8 +69,8 @@
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>A propos</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resumé</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Compétences Professionels</span></a></li>
+          <!-- <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li> -->
+          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Portfolio</span></a></li>
           <!-- <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> -->
         </ul>
       </nav><!-- .nav-menu -->
@@ -82,7 +93,7 @@
 
         <div class="section-title">
           <h2>A propos de moi</h2>
-          <p>Je m'appelle Clément CARPOT j'ai 24 ans et je suis passionné d'informatique (Developpement web, design, ...) ainsi que de sports (plus particulièrement le judo et le triathlon).</p>
+          <p>Je m'appelle Clément CARPOT j'ai <script>document.write(monAge);</script> ans et je suis passionné d'informatique (Developpement web, design, ...) ainsi que de sports (plus particulièrement le Judo et le Triathlon).</p>
         </div>
 
         <div class="row">
@@ -105,9 +116,9 @@
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>24</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Niveau d'étude:</strong> <span>BTS</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>clement.carpot@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span><script>document.write(monAge);</script></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Niveau d'étude:</strong> <span>Bac+2 Informatique</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>caclement17@gmail.com</span></li>
                 </ul>
               </div>
             </div>
@@ -268,7 +279,7 @@
     </section><!-- End Resume Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
+    <!-- <section id="portfolio" class="portfolio section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -382,31 +393,30 @@
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section>End Portfolio Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container">
 
         <div class="section-title">
-          <h2>Compétences Professionels</h2>
-          <p>Capacité à rendre compte d’un travail réalisé au sein d’une équipe projet en mettant clairement en évidence sa contribution personnelle</p>
+          <h2>Portfolio / Compétences Professionels</h2>
+          <b>Capacité à rendre compte d’un travail réalisé au sein d’une équipe projet en mettant clairement en évidence sa contribution personnelle</b>
         </div>
-
+        <br>
         <div class="row">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="bi bi-briefcase"></i></div>
             <h4 class="title"><a href="">Gérer le patrimoine informatique</a></h4>
-            <p class="description">Versionning (GIT)
-               <br> - Gestion des licences, inventaires
-               <br> - Base de connaissances 
-               <br> - Documentation technique (cahier de test, guide utilisateurs, spécification techniques et fonctionnels)
-               <br> - Modélisation de processus, workflow
-               <br> - Label qualité (amélioration continu, prise en compte des retours utilisateurs)
-               <br> - Gestion des utilisateurs/habilitations (gestion des droits CHMOD)
-               <br> - Audit 
-               <br> - PCA (externalisation sur un serveur hors réseau d'un projet)
-               <br> - Plan/organisation de sauvegarde, ITIL (Un projet = Etude -> Conception -> Réalisation -> Test -> Mise en Prod); Sauvegarde hebdo ou mensuel suivant les risques)
+            <p class="description">
+              <br> - Versionning (GIT)
+              <br> - Gestion des licences, inventaires
+              <br> - Documentation technique :<br>(<a href="doc/Cahier de test application zonage.xlsx" target="_blank">Cahier de test</a>, <a href="doc/spécification Nathan_Clement_xavier.pdf" target="_blank">spécifications techniques et fonctionnels)</a>
+              <br> - Modélisation de processus, workflow
+              <br> - Label qualité (amélioration continu, prise en compte des retours utilisateurs)
+              <br> - Gestion des utilisateurs/habilitations (gestion des droits CHMOD)
+              <br> - PCA (externalisation sur un serveur hors réseau d'un projet)
+              <br> - Plan/organisation de sauvegarde, ITIL (Un projet = Etude -> Conception -> Réalisation -> Test -> Mise en Prod); Sauvegarde hebdo ou mensuel suivant les risques)
               </p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
@@ -414,28 +424,50 @@
             <h4 class="title"><a href="">Répondre aux incidents et aux demandes d’assistance et d’évolution</a></h4>
             <p class="description">
               <br> - Gestion de tickets / incidents (Résolution des incidents utilisateurs)
-              <br> - Recueil de besoins / reformulation cahier des charges pour une demande d’évolution (Enquête de satisfaction avec retour aux utilisateurs)
+              <br> - <a href="doc/Rapport de synthése Forms Intranet.pdf" target="_blank">Recueil de besoins / reformulation cahier des charges pour une demande d’évolution (Enquête de satisfaction avec retour aux utilisateurs)</a>
               </p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-d²&elay="200">
             <div class="icon"><i class="bi bi-bar-chart"></i></div>
             <h4 class="title"><a href="">Développer la présence en ligne de l’organisation</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            <p class="description">
+              <br> - <a href="doc/Bandeau Incident.PNG" target="_blank">Développement et l’évolution d’un site Web</a> 
+              <br> - CMS
+            </p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
             <div class="icon"><i class="bi bi-binoculars"></i></div>
             <h4 class="title"><a href="">Travailler en mode projet</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <p class="description">
+              <br> - <a href="doc/Cahier des charges.md" target="_blank">Cahier des charges</a>,
+              <br> - <a href="doc/Diagramme_de_GANTT_-_BIRONNEAU,_CARPOT,_BAUBET.png" target="_blank">Méthode agile (SCRUM), planification, outils (gant, pert etc…)</a>
+              <br> - Outils de gestion de projet (SuitePro-G)
+              <br> - Versionning (Git)
+              <br> - <a href="doc/Compte Rendu réunion.png" target="_blank">Animation de réunion, rôle chef de projet</a>
+              <br> - Participer à un projet
+            </p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
             <div class="icon"><i class="bi bi-brightness-high"></i></div>
             <h4 class="title"><a href="">Mettre à disposition des utilisateurs un service informatique</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            <p class="description">
+              <br> - Tests d’intégration et d’acceptation
+              <br> - Mise en exploitation de toute solution/service
+              <br> - <a href="doc/Procdéure export zonage.pptx" target="_blank">Formation/accompagnement utilisateur</a> 
+              <br> - <a href="doc/Guide utilisateur - Application zonage.pptx" target="_blank">Réalisation documentations utilisateur</a>
+              <br> - Recettes
+              <br> - Devops
+            </p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
             <div class="icon"><i class="bi bi-calendar4-week"></i></div>
             <h4 class="title"><a href="">Organiser son développement professionnel</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+            <p class="description">
+              <br> - <a href="doc/Veille Carpot_Clement.pptx" target="_blank">Veille</a> 
+              <br> - CV, réseaux sociaux professionnels
+              <br> - Portfolio
+              <br> - <a href="doc/attestation-pix-20200127.pdf" target="_blank">Certifications</a> 
+            </p>
           </div>
         </div>
 
