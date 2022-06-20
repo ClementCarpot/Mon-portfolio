@@ -1,1 +1,0 @@
-Author: Clément CARPOT
